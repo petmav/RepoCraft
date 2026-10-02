@@ -11,6 +11,14 @@ translate between them over shared memory.
 > **Status: early and experimental.** A fan project, not affiliated with semiwork, Mojang or
 > Microsoft. You need to own both games.
 
+<p>
+  <img src="docs/shop.png" width="100%">
+</p>
+<p>
+  <img src="docs/multiplayer.png" width="49%">
+  <img src="docs/cart.png" width="49%">
+</p>
+
 ## How it works
 
 ```
