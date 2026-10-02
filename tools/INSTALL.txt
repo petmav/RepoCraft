@@ -1,0 +1,50 @@
+RepoCraft: play R.E.P.O. as a Minecraft player
+==============================================
+
+You need: R.E.P.O. on Steam, and a Microsoft account that owns Minecraft: Java Edition.
+(You don't need Minecraft installed: RepoCraft brings its own launcher, which downloads it.)
+
+INSTALL
+1. In Steam, right-click R.E.P.O. > Manage > Browse local files. That opens the game folder
+   (the one with REPO.exe in it).
+2. Unzip everything from RepoCraft-<version>.zip into that folder, so that winhttp.dll,
+   doorstop_config.ini and the BepInEx folder end up next to REPO.exe. If Windows asks,
+   replace existing files.
+3. Start R.E.P.O. from Steam as usual.
+
+FIRST START
+- RepoCraft unpacks its Minecraft (to %LOCALAPPDATA%\RepoCraft) and starts Prism Launcher.
+- Prism asks you to sign in: Alt-Tab to the Prism window and sign in with the Microsoft account
+  that owns Minecraft. Prism then downloads Minecraft and Java (a few minutes, first time only).
+- After that Minecraft runs hidden in the background whenever you play R.E.P.O., and closes
+  when R.E.P.O. closes. Start a game and you're the Minecraft player.
+- It needs about 3 GB of extra RAM.
+
+CONTROLS
+Minecraft has the keyboard and mouse (your Minecraft key bindings), except:
+  Left click on loot, a cart, a door, a button or a head  REPO's grab beam (hold to carry)
+  While carrying: right button / wheel / E / 1-3           rotate / push-pull / use / REPO inventory
+  Alt + 1-3                                                take an item out of REPO's inventory
+  G   REPO interact          Tab   REPO map               Esc   REPO menu
+  O   Minecraft's menu       T     REPO chat (multiplayer; Minecraft chat: /)
+  V / B   REPO push-to-talk / mute
+
+PLAYING WITH FRIENDS
+Everyone who wants to be a Minecraft player installs RepoCraft (the same version). When the
+lobby's host has RepoCraft, everyone with RepoCraft plays in the host's Minecraft world: the same
+blocks and holes, and you see each other as Minecraft players. Nothing to set up: it happens when
+you join the lobby (give it a few seconds; REPO says when you're in). Players without RepoCraft
+can still play with you normally. If the host doesn't have RepoCraft, your hits on monsters don't
+count (REPO's monsters only take damage on the host) and each of you has your own blocks.
+
+SETTINGS
+BepInEx\config\dev.repocraft.cfg (created on the first start): block size, damage, HUD,
+your own launcher instead of the bundled one.
+
+UNINSTALL
+Delete winhttp.dll, doorstop_config.ini, .doorstop_version, changelog.txt and the BepInEx
+folder from the game folder (and %LOCALAPPDATA%\RepoCraft for the bundled Minecraft).
+
+PROBLEMS
+Logs: BepInEx\LogOutput.log in the game folder, and
+%LOCALAPPDATA%\RepoCraft\Prism\instances\RepoCraft\.minecraft\logs\latest.log for Minecraft.

@@ -1,0 +1,11 @@
+.tools/
+fabric/build/
+fabric/.gradle/
+fabric/run/
+plugin/bin/
+plugin/obj/
+dist/
+*.user
+.vs/
+tools/**/bin/
+tools/**/obj/

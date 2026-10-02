@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>RepoCraft</AssemblyName>
+    <RootNamespace>RepoCraft</RootNamespace>
+    <Version>0.1.1</Version>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Nullable>disable</Nullable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591;CS0649</NoWarn>
+    <!-- Where REPO is installed. Override with -p:RepoDir=... -->
+    <RepoDir Condition="'$(RepoDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\REPO</RepoDir>
+    <ManagedDir>$(RepoDir)\REPO_Data\Managed</ManagedDir>
+    <BepInExCore Condition="'$(BepInExCore)' == ''">$(MSBuildThisFileDirectory)..\.tools\BepInEx5\BepInEx\core</BepInExCore>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(BepInExCore)\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExCore)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <!-- A publicized copy (tools\Publicizer) to compile against REPO's internals; the game's own
+         assembly is what loads at runtime (see IgnoresAccessChecksTo in Plugin.cs). -->
+    <Reference Include="Assembly-CSharp"><HintPath>$(MSBuildThisFileDirectory)..\.tools\publicized\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp-firstpass"><HintPath>$(ManagedDir)\Assembly-CSharp-firstpass.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ManagedDir)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ManagedDir)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ManagedDir)\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(ManagedDir)\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(ManagedDir)\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(ManagedDir)\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UIModule"><HintPath>$(ManagedDir)\UnityEngine.UIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AIModule"><HintPath>$(ManagedDir)\UnityEngine.AIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AnimationModule"><HintPath>$(ManagedDir)\UnityEngine.AnimationModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(ManagedDir)\UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule"><HintPath>$(ManagedDir)\UnityEngine.ScreenCaptureModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(ManagedDir)\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(ManagedDir)\UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.InputSystem" Condition="Exists('$(ManagedDir)\Unity.InputSystem.dll')"><HintPath>$(ManagedDir)\Unity.InputSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro" Condition="Exists('$(ManagedDir)\Unity.TextMeshPro.dll')"><HintPath>$(ManagedDir)\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.AI.Navigation"><HintPath>$(ManagedDir)\Unity.AI.Navigation.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Postprocessing.Runtime"><HintPath>$(ManagedDir)\Unity.Postprocessing.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PhotonUnityNetworking"><HintPath>$(ManagedDir)\PhotonUnityNetworking.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PhotonRealtime"><HintPath>$(ManagedDir)\PhotonRealtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Photon3Unity3D"><HintPath>$(ManagedDir)\Photon3Unity3D.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+</Project>

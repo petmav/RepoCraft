@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "repocraft",
+  "version": "${version}",
+  "name": "RepoCraft",
+  "description": "Play REPO with Minecraft physics, inventory and viewmodels.",
+  "authors": ["chasmlol"],
+  "contact": {
+    "sources": "https://github.com/chasmlol/RepoCraft"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "main": ["dev.repocraft.RepoCraft"],
+    "client": ["dev.repocraft.client.RepoCraftClient"]
+  },
+  "mixins": [
+    "repocraft.mixins.json",
+    { "config": "repocraft.client.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
